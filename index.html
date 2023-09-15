@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova - Bruna Loraine</title>
+</head>
+
+<body style="background-color: blueviolet; color: pink;">
+
+    <marquee behavior="slide" direction="right"><img src="img/img - abertura - oficial.png" alt="" width="300px"
+            height="300px"></marquee>
+
+    <p style="text-align: center; margin: 12px;">
+
+    <h1>Bem-vindo(a), chegou a hora de se reconstruir e se conhecer melhor!</h1>
+    <p>Insira seu nome:</p>
+    <input type="text" id="nomeUsuario">
+    <button onclick="darBoasVindas()">Enviar</button>
+    <p id="mensagemBoasVindas"></p>
+
+    <script>
+        function darBoasVindas() {
+            // Obtém o valor inserido pelo usuário no campo de texto
+            var nomeUsuario = document.getElementById("nomeUsuario").value;
+
+            // Verifica se o campo está vazio
+            if (nomeUsuario === "") {
+                alert("Por favor, insira seu nome!");
+            } else {
+                // Exibe a mensagem de boas-vindas com o nome do usuário
+                var mensagem = "🤩 Bem-vindo (a), " + nomeUsuario + "!";
+                document.getElementById("mensagemBoasVindas").textContent = mensagem;
+            }
+        }
+    </script>
+
+    <h1>Tente adivinhar o número de 1 a 10:</h1>
+    <input type="number" id="numeroUsuario" min="1" max="10">
+    <button onclick="verificarResposta()">Verificar</button>
+    <p id="resposta"></p>
+
+    <script>
+        function verificarResposta() {
+            const numeroInserido = parseInt(document.getElementById("numeroUsuario").value);
+            const resposta = document.getElementById("resposta");
+
+            // Resposta sempre será "Tente outra vez!"
+            resposta.textContent = "Tente outra vez! 🥴";
+        }
+    </script>
+
+    <h1>Escolha um número de 1 a 10, digite e aguarde a resposta:</h1>
+    <script src="Provão/pv1.js"></script>
+
+    <input type="number" id="numeroEscolhido" min="1" max="10">
+
+    <button onclick="mostrarMensagem()">Resposta</button>
+    <p id="mensagem"></p>
+
+    <h1>Como você está se sentindo hoje?</h1>
+
+    <button id="felizBtn">Feliz</button>
+    <button id="tristeBtn">Triste</button>
+    <p id="mensagem-2"></p>
+
+    <script>
+        // Referência aos botões e ao elemento de mensagem
+        var felizBtn = document.getElementById("felizBtn");
+        var tristeBtn = document.getElementById("tristeBtn");
+        var mensagemElement = document.getElementById("mensagem-2");
+
+        // Referência aos botões e ao elemento de mensagem
+        var felizBtn = document.getElementById("felizBtn");
+        var tristeBtn = document.getElementById("tristeBtn");
+        var mensagemElement = document.getElementById("mensagem-2");
+
+        // Evento de clique para o botão Feliz
+        felizBtn.addEventListener("click", function () {
+            mensagemElement.textContent = "Que ótimo! Estou feliz por você!";
+        });
+
+        // Evento de clique para o botão Triste
+        tristeBtn.addEventListener("click", function () {
+            mensagemElement.textContent = "Sinto muito que você esteja se sentindo assim. Vai melhorar!";
+        });
+    </script>
+
+    <h1>O que tem sido o centro de sua vida?</h1>
+
+            <select name="mensagemvida" id="mensagemvida">
+            <option value="vidap">Vida Pessoal</option>
+            <option value="vidapro">Vida Profissional</option>
+            <option value="vidaDeus">Deus</option>
+            <option value="VidaFeliz">Sinto-me perdido(a)</option>
+        </select>
+    
+        <button id="mostrarMensagem">Clica aqui</button>
+        <p id="mensagem3"></p>
+        
+        <script>
+            // Captura o botão e adiciona um ouvinte de eventos a ele
+            document.getElementById("mostrarMensagem").addEventListener("click", function () {
+                var selecao = document.getElementById("mensagemvida").value;
+                var mensagemDiv = document.getElementById("mensagem3");
+    
+                if (selecao == "vidap") {
+                    mensagemDiv.textContent = "Hora de equilibrar tudo e lembrar de olhar para Deus!";
+                } else if (selecao == "vidapro") {
+                    mensagemDiv.textContent = "Trabalhar é excelente, mas não é tudo na vida, repense seus focos!";
+                } else if (selecao == "vidaDeus") {
+                    mensagemDiv.textContent = "Somente através dEle, por Ele e para Ele que nós estamos de pé!";
+                } else if (selecao == "VidaFeliz") {
+                    mensagemDiv.textContent = "Já pensou em conversar com Deus como se sente?";
+                }
+            });
+        </script>
+
+    
+
+    <h1>Você já se fez alguns questionamentos pessoais que te ajudaram gerar transformação?</h1>
+    <h4>Responda para si, reflita.</h4>
+    <button id="simBtn">SIM</button>
+    <button id="nãoBtn">NÃO</button>
+    <h6>Apenas reflexição!</h6>
+
+    <h3>Clica aqui se sua resposta anterior foi positiva.</h3>
+    <button id="positivoButton">Positivo</button>
+    <h3>Clica aqui se sua resposta anterior foi negativa.</h3>
+    <button id="negativoButton">Negativo</button>
+
+    <p id="mensagemE"></p>
+
+    <script>
+        // Função para exibir uma mensagem positiva
+        function mostrarMensagemPositiva() {
+            var mensagemElement = document.getElementById("mensagemE");
+            mensagemElement.textContent = "Parabéns, os questionamentos pessoais são capazes de gerar transformação, é através deles que conseguimos evoluir, e nos transformarmos em seres humanos melhores. 😊";
+        }
+
+        // Função para exibir uma mensagem negativa
+        function mostrarMensagemNegativa() {
+            var mensagemElement = document.getElementById("mensagemE");
+            mensagemElement.textContent = "Parabéns, você foi sincero. Chegou a hora de se avaliar, de se questionar, nós somos seres em constante evolução, mas para isso precisamos nos avaliar e reavaliar, todos os dias. 😞";
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById("positivoButton").addEventListener("click", mostrarMensagemPositiva);
+        document.getElementById("negativoButton").addEventListener("click", mostrarMensagemNegativa);
+    </script>
+
+    <h3>Chegamos no melhor momento, ao clicar aqui: <a href="https://www.bibliaonline.com.br/acf"> 👉 você será direcionado para o manual da vida, leia sem pressa, tua vida terá um novo sentido.</h3><br>
+
+    <h3 style="text-align: center;">Cuidamos da nossa mente, mas toda diversão também será bem vinda! 🥳<br>
+    <iframe src="https://www.clickjogos.com.br/" width="800" height="600"></iframe></h3>
+
+    <h4 style="text-align: start; font-family: 'Courier New', Courier, monospace;">Alertas motivacionais!!!</h4>
+    <button onclick="euposso()">Eu posso!</button><br>
+    <button onclick="euacredito()">Eu acredito!</button><br>
+    <button onclick="persistir()">Persistir sempre será a única opção!</button><br>
+    <button onclick="fé()">Tenha fé!</button><br>
+    <button onclick="depé()">De joelhos é mais fácil se manter de pé!</button><br>
+    <button onclick="semquerer()">Maior desafio é ter que desistir sem querer!</button><br>
+    <button onclick="vencedor()">O vencedor nem sempre é o que vence todas, mas sim o que persiste sempre!</button><br>
+    <button onclick="nuncadesistir()">Nunca desistir!</button><br>
+    <button onclick="Deusétudo()">Deus seja o centro de tudo sempre!</button><br>
+
+    <script src="Provão/pv2.js"></script>
+    <script src="Provão/pv3.js"></script>
+    <script src="Provão/pv4.js"></script>
+    <script src="Provão/pv5.js"></script>
+    <script src="Provão/pv6.js"></script>
+    <script src="Provão/pv7.js"></script>
+    <script src="Provão/pv8.js"></script>
+    <script src="Provão/pv9.js"></script>
+    <script src="Provão/pv10.js"></script>
+
+    <h2 style="text-align: right;">Maior motivação é sempre persistir!</h2>
+    <h6 style="text-align: right;">Prova - Bruna Loraine</h6>
+
+</body>
+</html>
